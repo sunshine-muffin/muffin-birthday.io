@@ -1,0 +1,11 @@
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('1888-843.png'); /* Replace 'your-image.jpg' with the path to your 1280 x 720 image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-color: #F9F9F9;
+  }
+

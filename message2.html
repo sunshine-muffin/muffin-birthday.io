@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/message-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/message-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/message-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <!-- Default Highlight.js css -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css"
+    /> -->
+    <!-- Custom Highlight.js theme Dracula -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="css/message2.css" />
+    <script src="js/message2.js" defer></script>
+
+    <title>Message 2</title>
+  </head>
+  <body>
+    <div class="container">
+      <p class="language" id="language-copy">Debug 3 errors to print my message (Copy the code and edit in compiler)</p>
+      <div class="code-wrapper">
+        <pre>
+          <code id="code">
+#include <stdio.h>
+
+int main() {
+
+    int asciiValues[] = {68, 111, 32, 121, 111, 117, 32, 104, 97, 118, 101, 32, 97, 32, 109, 97,
+      112, 63, 32, 73, 32, 106, 117, 115, 116, 32, 103, 111, 116, 32, 108, 111, 115, 116, 32, 105,
+      110, 32, 121, 111, 117, 114, 32, 101, 121, 101, 115, 46};
+
+    int arraySize = sizeof(asciiValues) / sizeof(int);
+
+    char convertedString[arraySize];
+
+    for (int i = 0; i < arraySize; i++) {
+        convertedString[i] = (char)asciiValues[i];
+    }
+
+    convertedString[arraySize] = '0';
+
+    printf("Beens says: %s\n", convertedString);
+
+    return 0;
+}
+          </code>
+        </pre>
+        <button id="copy-button" class="copy-arrange">Copy</button>
+        <a href="compiler.html"> <button id="compile-button">Compile</button> </a>
+      </div>
+      <span id="copy-success">Code copied! :)</span>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  </body>
+</html>
+

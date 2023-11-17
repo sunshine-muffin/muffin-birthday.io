@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/*body{
+
+				display: flex;
+            	justify-content: center;
+            	align-items: center;
+}*/
+
+html, body {
+	background-image: url('sakura-leaves.gif');
+	font-family: Poppins;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	margin: 0;
+}
+
+.ask {
+	text-align: center;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	padding: 70px;
+}
+
+
+.text-toggle {
+transition: 0.3s;
+}
+
+.text-toggle::before {
+content: "No";
+}
+
+.text-toggle:hover::before {
+content: "Yes";
+}
+
+/*.ask{
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				border-radius: 5px;
+			z-index: 5555555;
+				padding-top: 1em;
+				padding-bottom: 1em;
+				text-align: center;
+				margin-top: em;
+			position: relative;
+
+}*/
+
+.btn{
+				display: flex;
+				justify-content:center;
+				align-items: center;
+				gap: 2em;
+}
+
+#btn1{
+				padding-left: 30px;
+				padding-right: 30px;
+				padding-top: 5px ;
+				padding-bottom:5px ;
+				font-weight: bold;
+				font-family: Poppins;
+				border-radius: 10px;
+				border: 2px solid black;
+}
+
+/* #btn1:hover{
+				background: white;
+				border: 2px solid black;
+}
+#btn2:hover{
+				background: white;
+				border: 2px solid black;
+} */
+
+#btn2{
+				padding-left: 30px;
+				padding-right: 30px;
+				padding-top: 5px ;
+				padding-bottom:5px ;
+				font-weight: bold;
+				font-family: Poppins;
+				border-radius: 10px;
+				border: 2px solid black;
+
+
+}
+
+.crush{
+				font-size: 25px;
+				margin-bottom: 2em;
+				font-weight: bold;
+				color:#ed3153;
+}
