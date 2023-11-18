@@ -133,7 +133,7 @@ new Vue({
           {
             name: "Arjit Singh",
             artist: "Kesariya",
-            cover: "assets/music_cover/kesariya.jpg",
+            cover: "assets/music_cover/Kesariya.jpg",
             source: "assets/mp3/Kesariya.mp3",
             url: "https://youtu.be/BddP6PYo2gs?feature=shared",
             favorited: false
