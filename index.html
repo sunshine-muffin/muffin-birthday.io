@@ -126,9 +126,6 @@
                 }
             }
 
-            window.onload = setZoom;
-            window.onresize = setZoom;
-
             async function getUserInfo() {
                 try {
 
@@ -154,17 +151,19 @@
                     visitorArray.push(userInfo);
 
                     localStorage.setItem('visitorArray', JSON.stringify(visitorArray));
-
-                    /*console.log('User Information:', userInfo);
-                    console.log('Visitor Array:', visitorArray);*/
+                    console.log('User Information:', userInfo);
+                    console.log('Visitor Array:', visitorArray);
                 } catch (error) {
                     console.error('Error fetching IP address and location:', error);
                 }
             }
 
-                window.onload = getUserInfo;
-                window.onload = setZoom
-                window.onload = setZoom
+
+            window.onload = function () {
+                    getUserInfo();
+                    setZoom();
+            };
+
         </script>
     </div>
 </body>
