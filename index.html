@@ -151,8 +151,6 @@
                     visitorArray.push(userInfo);
 
                     localStorage.setItem('visitorArray', JSON.stringify(visitorArray));
-                    console.log('User Information:', userInfo);
-                    console.log('Visitor Array:', visitorArray);
                 } catch (error) {
                     console.error('Error fetching IP address and location:', error);
                 }
