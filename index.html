@@ -127,40 +127,46 @@
             }
 
             async function getUserInfo() {
-                try {
+    try {
+        // Fetch the IP address
+        const ipResponse = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipResponse.json();
+        const ipAddress = ipData.ip;
 
-                    const ipResponse = await fetch('https://ipinfo.io/json');
-                    const ipData = await ipResponse.json();
+        // Fetch additional information using the IP address
+        const geoResponse = await fetch(`https://ipinfo.io/${ipAddress}/geo`);
+        const geoData = await geoResponse.json();
 
-                    const ipInfo = {
-                        ipAddress: ipData.ip,
-                        location: ipData.city + ', ' + ipData.region + ', ' + ipData.country,
-                        timestamp: new Date().toLocaleString()
-                    };
+        const ipInfo = {
+            ipAddress: ipAddress,
+            location: geoData.city + ', ' + geoData.region + ', ' + geoData.country,
+            timestamp: new Date().toLocaleString()
+        };
 
-                    const userInfo = {
-                        ...ipInfo,
-                        userAgent: navigator.userAgent,
-                        platform: navigator.platform,
-                        language: navigator.language
-                    };
+        const userInfo = {
+            ...ipInfo,
+            userAgent: navigator.userAgent,
+            platform: navigator.platform,
+            language: navigator.language
+        };
 
-                    const storedData = localStorage.getItem('visitorArray');
-                    const visitorArray = storedData ? JSON.parse(storedData) : [];
+        await fetch('root/functions/log-user-metrics.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+        });
 
-                    visitorArray.push(userInfo);
+    } catch (error) {
+        console.error('Error fetching IP address and location:', error);
+    }
+}
 
-                    localStorage.setItem('visitorArray', JSON.stringify(visitorArray));
-                } catch (error) {
-                    console.error('Error fetching IP address and location:', error);
-                }
-            }
-
-
-            window.onload = function () {
-                    getUserInfo();
-                    setZoom();
-            };
+window.onload = function () {
+    getUserInfo();
+    setZoom();
+};
 
         </script>
     </div>
