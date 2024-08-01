@@ -1,3 +1,10 @@
 [build]
   edge_functions = "edge-functions"
+  publish = "public"
 
+[[edge_functions]]
+  path = "/geolocation"
+  function = "geolocation"
+
+[functions]
+  directory = "netlify/functions"
