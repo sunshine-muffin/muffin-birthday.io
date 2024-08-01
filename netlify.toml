@@ -5,6 +5,3 @@
 [[edge_functions]]
   path = "/geolocation"
   function = "geolocation"
-
-[functions]
-  directory = "netlify/functions"
