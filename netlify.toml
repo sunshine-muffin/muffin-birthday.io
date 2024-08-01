@@ -1,6 +1,5 @@
 [build]
   edge_functions = "edge-functions"
-  publish = "public"
 
 [[edge_functions]]
   path = "/geolocation"
