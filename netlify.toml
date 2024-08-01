@@ -1,5 +1,5 @@
 [build]
-  functions = "functions"
+  edge_functions = "edge-functions"
 
 [[redirects]]
   from = "/.netlify/functions/*"
